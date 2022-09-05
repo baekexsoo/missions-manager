@@ -1,0 +1,64 @@
+<app-header></app-header>
+
+<div class="container text-center">
+
+  <form #newBook="ngForm"
+        (ngSubmit)="onSubmitNewBook(newBook)">
+
+    <div class="form-group">
+      <label for="bookName">
+        Nom de la mission
+      </label>
+      <input type="text"
+             id="bookName"
+             class="form-control"
+             name="bookName"
+             ngModel
+             required>
+    </div>
+
+    <div class="form-group">
+      <label for="authorName">
+        Nom(s) du (ou des) CBA(s)
+      </label>
+      <input type="text"
+             id="authorName"
+             class="form-control"
+             name="authorName"
+             ngModel
+             required>
+    </div>
+
+    <div class="form-group">
+      <label for="description">
+        Description de la mission
+      </label>
+      <textarea
+        id="description"
+        class="form-control"
+        name="description"
+        ngModel
+        maxlength="258"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="status">
+        Statut de la mission
+      </label>
+      <select id="status"
+              class="form-control"
+              name="status"
+              [ngModel]="defaultStatus">
+        <option value="En Cours">En Cours</option>
+        <option value="Terminee">Terminée</option>
+      </select>
+    </div>
+
+    <button class="btn btn-primary" type="submit" [disabled]="newBook.invalid">Ajouter !</button>
+
+    <br>
+
+    <a routerLink="/books" class="card-link">Retour vers les missions</a>
+  </form>
+
+</div>

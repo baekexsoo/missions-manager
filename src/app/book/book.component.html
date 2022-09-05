@@ -1,0 +1,29 @@
+<td>{{bookTitle}}</td>
+<td>{{bookAuthor}}</td>
+<td>{{bookStatus}}</td>
+<td>
+  <button *ngIf="bookStatus === 'En Cours'"
+          type="button"
+          class="btn btn-dark"
+          (click)="onSwitchStatus(index, 'Terminee')">Basculer en Terminée
+  </button>
+  <button *ngIf="bookStatus === 'ter'"
+          type="button"
+          class="btn btn-dark"
+          (click)="onSwitchStatus(index, 'En Cours')"> En Cours
+  </button>
+  |
+  <a class="text-white" [routerLink]="detailsUrl">
+    <button type="button"
+            class="btn btn-primary">
+      Détails
+    </button>
+  </a>
+  |
+  <a class="text-white" [routerLink]="editUrl">
+    <button type="button"
+            class="btn btn-primary">
+      Modifier
+    </button>
+  </a>
+</td>

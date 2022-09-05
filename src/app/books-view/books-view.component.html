@@ -1,0 +1,38 @@
+<app-header></app-header>
+
+<div class="container">
+
+  <div class="text-center">
+    <button type="button"
+            class="btn btn-dark"
+            (click)="onSwitchAllStatus('En Cours')">Toutes En Cours
+    </button>
+    |
+    <button type="button"
+            class="btn btn-dark"
+            (click)="onSwitchAllStatus('Terminee')">Toutes Terminées
+    </button>
+  </div>
+
+  <br>
+
+  <table class="table">
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">Nom Mission</th>
+      <th scope="col">CBA</th>
+      <th scope="col">Statut</th>
+      <th scope="col">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr app-book *ngFor="let book of books; let i = index"
+        [bookTitle]="book.title"
+        [bookAuthor]="book.author"
+        [bookStatus]="book.status"
+        [bookId]="book.id"
+        [index]="i"></tr>
+    </tbody>
+  </table>
+
+</div>

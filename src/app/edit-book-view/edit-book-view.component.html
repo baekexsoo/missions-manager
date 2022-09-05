@@ -1,0 +1,64 @@
+<app-header></app-header>
+
+<div class="container text-center">
+
+  <form #f="ngForm"
+        (ngSubmit)="onSubmitEditBook()">
+
+    <div class="form-group">
+      <label for="bookName">
+        Nom de la Mission
+      </label>
+      <input type="text"
+             id="bookName"
+             class="form-control"
+             name="bookName"
+             [(ngModel)]="book.title"
+             required>
+    </div>
+
+    <div class="form-group">
+      <label for="authorName">
+        Nom du (ou des) CBA(s)
+      </label>
+      <input type="text"
+             id="authorName"
+             class="form-control"
+             name="authorName"
+             [(ngModel)]="book.author"
+             required>
+    </div>
+
+    <div class="form-group">
+      <label for="description">
+        Description de la mission
+      </label>
+      <textarea
+        id="description"
+        class="form-control"
+        name="description"
+        [(ngModel)]="book.description"
+        maxlength="258"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="status">
+        État de la mission
+      </label>
+      <select id="status"
+              class="form-control"
+              name="status"
+              [(ngModel)]="book.status">
+        <option value="En Cours">En Cours</option>
+        <option value="Terminee">Terminée</option>
+      </select>
+    </div>
+
+    <button class="btn btn-primary" type="submit" [disabled]="f.invalid">Modifier !</button>
+
+    <br>
+
+    <a routerLink="/books" class="card-link">Retour vers les missions</a>
+  </form>
+
+</div>
