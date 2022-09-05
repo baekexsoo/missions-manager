@@ -16,6 +16,11 @@ export class UserService {
       'NDA',
       'ndamarina17@gmail.com',
       'azerty');
+      this._user = new User('Didier',
+      'ADIO',
+      'adiodidier@gmail.com',
+      'azerty');
+      
 
   }
   
