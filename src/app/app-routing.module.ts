@@ -11,10 +11,10 @@ import {ProfilViewComponent} from './profil-view/profil-view.component';
 
 const routes: Routes = [
   { path: 'auth', component: AuthViewComponent },
-  { path: 'books', canActivate: [AuthGuardService], component: BooksViewComponent},
-  { path: 'book/new', canActivate: [AuthGuardService], component: NewBookViewComponent},
-  { path: 'book/edit/:id', canActivate: [AuthGuardService], component: EditBookViewComponent},
-  { path: 'book/:id', canActivate: [AuthGuardService], component: SingleBookViewComponent},
+  { path: 'missions', canActivate: [AuthGuardService], component: BooksViewComponent},
+  { path: 'mission/new', canActivate: [AuthGuardService], component: NewBookViewComponent},
+  { path: 'mission/edit/:id', canActivate: [AuthGuardService], component: EditBookViewComponent},
+  { path: 'mission/:id', canActivate: [AuthGuardService], component: SingleBookViewComponent},
   { path: 'profil', canActivate: [AuthGuardService], component: ProfilViewComponent},
   { path: '', canActivate: [AuthGuardService], component: BooksViewComponent },
   { path: 'not-found', component: ErrorViewComponent },

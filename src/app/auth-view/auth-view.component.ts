@@ -47,7 +47,7 @@ export class AuthViewComponent implements OnInit {
     this.authService.checkAuth(email, password)
       .then(
         () => {
-          this.router.navigate(['books']);
+          this.router.navigate(['missions']);
         },
         (err) => {
           this.errorMsg = err;
