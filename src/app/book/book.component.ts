@@ -21,8 +21,8 @@ export class BookComponent implements OnInit {
 
   ngOnInit() {
 
-    this.detailsUrl = '/book/' + this.bookId;
-    this.editUrl = '/book/edit/' + this.bookId;
+    this.detailsUrl = '/mission/' + this.bookId;
+    this.editUrl = '/mission/edit/' + this.bookId;
 
   }
 
